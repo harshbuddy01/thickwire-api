@@ -9,7 +9,8 @@ export class EmailService {
 
   constructor(private readonly config: ConfigService) {
     const { Resend } = require('resend');
-    this.resend = new Resend(this.config.getOrThrow('RESEND_API_KEY'));
+    const resendKey = this.config.get('RESEND_API_KEY');
+    this.resend = new Resend(resendKey || 're_placeholder_key_to_prevent_crash');
     this.fromEmail = this.config.get('RESEND_FROM_EMAIL', 'orders@yourdomain.com');
   }
 

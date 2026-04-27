@@ -20,6 +20,9 @@ async function bootstrap() {
     origin: [
       configService.get('FRONTEND_URL', 'http://localhost:3000'),
       configService.get('ADMIN_URL', 'http://localhost:3002'),
+      'https://admin.streamkart.store',
+      'https://streamkart.store',
+      'https://www.streamkart.store',
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],

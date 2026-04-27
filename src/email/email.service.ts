@@ -4,14 +4,20 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class EmailService {
   private readonly logger = new Logger(EmailService.name);
-  private resend: any;
+  private transporter: any;
   private fromEmail: string;
 
   constructor(private readonly config: ConfigService) {
-    const { Resend } = require('resend');
-    const resendKey = this.config.get('RESEND_API_KEY');
-    this.resend = new Resend(resendKey || 're_placeholder_key_to_prevent_crash');
-    this.fromEmail = this.config.get('RESEND_FROM_EMAIL', 'orders@yourdomain.com');
+    const nodemailer = require('nodemailer');
+    this.transporter = nodemailer.createTransport({
+      host: this.config.get('SMTP_HOST', 'smtp-relay.brevo.com'),
+      port: this.config.get<number>('SMTP_PORT', 587),
+      auth: {
+        user: this.config.get('SMTP_USER', 'a971a9001@smtp-brevo.com'),
+        pass: this.config.get('SMTP_PASS', 'sMYSFpvKtVh2BI71'),
+      },
+    });
+    this.fromEmail = this.config.get('SMTP_FROM_EMAIL', 'ThickWire <orders@yourdomain.com>');
   }
 
   async sendOrderConfirmation(to: string, data: { customerName: string; orderId: string; serviceName: string; planName: string; amount: string }) {
@@ -99,10 +105,15 @@ export class EmailService {
 
   private async send(to: string, subject: string, html: string) {
     try {
-      await this.resend.emails.send({ from: this.fromEmail, to, subject, html });
+      await this.transporter.sendMail({
+        from: this.fromEmail,
+        to,
+        subject,
+        html,
+      });
       this.logger.log(`Email sent to ${to}: ${subject}`);
       return true;
-    } catch (err) {
+    } catch (err: any) {
       this.logger.error(`Email failed to ${to}: ${err.message}`);
       return false;
     }

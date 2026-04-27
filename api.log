@@ -1,0 +1,1113 @@
+
+> thickwire-api@1.0.0 start:dev
+> nest start --watch
+
+[2J[3J[H[[90m5:11:45 PM[0m] Starting compilation in watch mode...
+
+[[90m5:11:47 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:13716) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +18ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mThrottlerModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mRedisModule dependencies initialized[39m[38;5;3m +17ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEmailModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegramModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWhatsappModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAutomationModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCronModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mNotificationModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCouponsModule dependencies initialized[39m[38;5;3m +27ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAccountModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAdminModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServicesModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mInventoryModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCustomerAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:48 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mOrdersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mHealthController {/api/v1/health}:[39m[38;5;3m +163ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/health, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/api/v1/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/verify-totp, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/refresh, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/logout, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/setup-totp, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/enable-totp, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mCustomerAuthController {/api/v1/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/signup, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/verify-email, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/login, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/refresh, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/logout, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/forgot-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/reset-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/me, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/me, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mServicesController {/api/v1/services}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/:slug, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/list, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:serviceId/plans, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:serviceId/plans, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/plans/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/plans/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mInventoryController {/api/v1/inventory}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/single, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/bulk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/plan/:planId, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/stock-counts, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOrdersController {/api/v1/orders}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/create, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/webhook, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/webhook/cashfree, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/status/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/admin/list, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/admin/:id/fulfill, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mCouponsController {/api/v1}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/validate-coupon, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id/usage, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/bulk-generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAccountController {/api/v1/account}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/orders, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/orders/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/subscriptions, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/preferences, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mSupportController {/api/v1/support}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support/admin/list, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support/admin/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support/admin/:id/status, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAdminController {/api/v1/admin}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/dashboard, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/users, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/users, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/users/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/audit-logs, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/settings/test-telegram, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/customers, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/customers/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/customers/:id/toggle-active, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/subscriptions, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/revenue-by-service, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/revenue-by-plan, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/coupon-performance, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/orders-export, GET} route[39m[38;5;3m +0ms[39m
+[31m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[32m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +23ms[39m
+[31m[Nest] 13719  - [39m04/27/2026, 5:11:49 PM [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3001[39m[38;5;3m +2ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (/Users/harshanand/.gemini/antigravity/scratch/thickwire-api/node_modules/@nestjs/platform-express/adapters/express-adapter.js:95:32)
+    at /Users/harshanand/.gemini/antigravity/scratch/thickwire-api/node_modules/@nestjs/core/nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/Users/harshanand/.gemini/antigravity/scratch/thickwire-api/node_modules/@nestjs/core/nest-application.js:173:16)
+    at async bootstrap (/Users/harshanand/.gemini/antigravity/scratch/thickwire-api/src/main.ts:46:3) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.12.0
+[2J[3J[H[[90m6:07:29 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m6:07:30 PM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +17ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mThrottlerModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mRedisModule dependencies initialized[39m[38;5;3m +15ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEmailModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegramModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWhatsappModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAutomationModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCronModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mNotificationModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCouponsModule dependencies initialized[39m[38;5;3m +24ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAccountModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAdminModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServicesModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mInventoryModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCustomerAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mOrdersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mHealthController {/api/v1/health}:[39m[38;5;3m +196ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/health, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/api/v1/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/login, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/verify-totp, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/refresh, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/logout, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/setup-totp, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/enable-totp, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mCustomerAuthController {/api/v1/auth}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/signup, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/verify-email, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/google/callback, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/refresh, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/logout, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/forgot-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/reset-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/me, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/me, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mServicesController {/api/v1/services}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/:slug, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/list, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:serviceId/plans, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:serviceId/plans, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/plans/:id, PUT} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/plans/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mInventoryController {/api/v1/inventory}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/single, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/bulk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/plan/:planId, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/stock-counts, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOrdersController {/api/v1/orders}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/create, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/webhook, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/webhook/cashfree, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/status/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/admin/list, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/admin/:id/fulfill, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mCouponsController {/api/v1}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/validate-coupon, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id/usage, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/bulk-generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAccountController {/api/v1/account}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/orders, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/orders/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/subscriptions, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/preferences, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mSupportController {/api/v1/support}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support/admin/list, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support/admin/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support/admin/:id/status, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAdminController {/api/v1/admin}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/dashboard, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/users, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/users, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/users/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/audit-logs, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/settings/test-telegram, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/customers, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/customers/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/customers/:id/toggle-active, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/subscriptions, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/revenue-by-service, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/revenue-by-plan, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/coupon-performance, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/orders-export, GET} route[39m[38;5;3m +0ms[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[32m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +26ms[39m
+🚀 ThickWire API running on port 3001
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:07:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[2J[3J[H[[90m6:08:41 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/support/support.controller.ts[0m:[93m24[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'createTicket' does not exist on type 'SupportService'.
+
+[7m24[0m         return this.supportService.createTicket(body);
+[7m  [0m [91m                                   ~~~~~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m36[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'findAll' does not exist on type 'SupportService'.
+
+[7m36[0m         return this.supportService.findAll({ status, page, limit });
+[7m  [0m [91m                                   ~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m44[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'findById' does not exist on type 'SupportService'.
+
+[7m44[0m         return this.supportService.findById(id);
+[7m  [0m [91m                                   ~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m52[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'updateStatus' does not exist on type 'SupportService'.
+
+[7m52[0m         return this.supportService.updateStatus(id, status);
+[7m  [0m [91m                                   ~~~~~~~~~~~~[0m
+
+[[90m6:08:41 PM[0m] Found 4 errors. Watching for file changes.
+
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[2J[3J[H[[90m6:08:43 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/support/support.controller.ts[0m:[93m3[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/jwt-auth.guard' or its corresponding type declarations.
+
+[7m3[0m import { JwtAuthGuard } from '../admin/jwt-auth.guard';
+[7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m4[0m:[93m28[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/roles.guard' or its corresponding type declarations.
+
+[7m4[0m import { RolesGuard } from '../admin/roles.guard';
+[7m [0m [91m                           ~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m5[0m:[93m23[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/roles.decorator' or its corresponding type declarations.
+
+[7m5[0m import { Roles } from '../admin/roles.decorator';
+[7m [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m6:08:43 PM[0m] Found 3 errors. Watching for file changes.
+
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[2J[3J[H[[90m6:08:44 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/support/support.controller.ts[0m:[93m3[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/jwt-auth.guard' or its corresponding type declarations.
+
+[7m3[0m import { JwtAuthGuard } from '../admin/jwt-auth.guard';
+[7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m4[0m:[93m28[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/roles.guard' or its corresponding type declarations.
+
+[7m4[0m import { RolesGuard } from '../admin/roles.guard';
+[7m [0m [91m                           ~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m5[0m:[93m23[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/roles.decorator' or its corresponding type declarations.
+
+[7m5[0m import { Roles } from '../admin/roles.decorator';
+[7m [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m6:08:44 PM[0m] Found 3 errors. Watching for file changes.
+
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:08:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:09:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:10:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:11:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:03 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:05 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:07 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:09 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:11 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:13 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:15 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:19 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:21 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:23 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:25 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:27 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:29 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:31 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:33 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:35 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:37 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:39 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:41 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:43 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:45 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:47 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:49 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:51 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:53 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:55 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:57 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:12:59 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:01 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:16 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:16 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:18 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:18 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:20 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:20 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:22 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:22 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:24 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:24 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:26 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:26 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:28 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:28 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:30 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:30 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:46 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:46 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:50 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:50 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:54 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:54 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:56 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:56 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:13:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:02 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:02 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:16 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:16 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[2J[3J[H[[90m6:14:16 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/support/support.controller.ts[0m:[93m3[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/jwt-auth.guard' or its corresponding type declarations.
+
+[7m3[0m import { JwtAuthGuard } from '../admin/jwt-auth.guard';
+[7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m4[0m:[93m28[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/roles.guard' or its corresponding type declarations.
+
+[7m4[0m import { RolesGuard } from '../admin/roles.guard';
+[7m [0m [91m                           ~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m5[0m:[93m23[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/roles.decorator' or its corresponding type declarations.
+
+[7m5[0m import { Roles } from '../admin/roles.decorator';
+[7m [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m6:14:16 PM[0m] Found 3 errors. Watching for file changes.
+
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:18 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:18 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:20 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:20 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:22 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:22 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:24 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:24 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:26 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:26 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:28 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:28 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:30 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:30 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:46 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:46 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:50 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:50 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:54 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:54 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:56 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:56 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:14:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:02 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:02 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:16 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:16 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:18 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:18 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:20 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:20 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:22 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:22 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:24 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:24 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[2J[3J[H[[90m6:15:25 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/support/support.controller.ts[0m:[93m3[0m:[93m30[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/jwt-auth.guard' or its corresponding type declarations.
+
+[7m3[0m import { JwtAuthGuard } from '../admin/jwt-auth.guard';
+[7m [0m [91m                             ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m4[0m:[93m28[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/roles.guard' or its corresponding type declarations.
+
+[7m4[0m import { RolesGuard } from '../admin/roles.guard';
+[7m [0m [91m                           ~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/support/support.controller.ts[0m:[93m5[0m:[93m23[0m - [91merror[0m[90m TS2307: [0mCannot find module '../admin/roles.decorator' or its corresponding type declarations.
+
+[7m5[0m import { Roles } from '../admin/roles.decorator';
+[7m [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[[90m6:15:25 PM[0m] Found 3 errors. Watching for file changes.
+
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:26 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:26 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:28 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:28 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:30 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:30 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:46 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:46 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:50 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:50 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:54 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:54 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:56 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:56 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:15:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:02 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:02 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:16 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:16 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:18 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:18 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:20 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:20 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:22 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:22 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:24 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:24 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:26 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:26 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:28 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:28 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:30 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:30 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:32 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:34 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:36 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:38 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:40 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:42 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:44 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:46 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:46 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:48 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:50 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:50 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:52 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:54 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:54 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:56 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:56 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:16:58 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:00 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:02 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:02 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:04 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:06 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:08 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:10 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:12 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 17409  - [39m04/27/2026, 6:17:14 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[2J[3J[H[[90m6:17:15 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m6:17:16 PM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +31ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mThrottlerModule dependencies initialized[39m[38;5;3m +18ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mRedisModule dependencies initialized[39m[38;5;3m +19ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mEmailModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTelegramModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mWhatsappModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAutomationModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCronModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mNotificationModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCouponsModule dependencies initialized[39m[38;5;3m +29ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAccountModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAdminModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mServicesModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mInventoryModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mSupportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCustomerAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mOrdersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mHealthController {/api/v1/health}:[39m[38;5;3m +207ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/health, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/api/v1/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/verify-totp, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/refresh, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/logout, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/setup-totp, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/enable-totp, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mCustomerAuthController {/api/v1/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/signup, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/verify-email, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/google, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/google/callback, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/refresh, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/logout, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/forgot-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/reset-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/me, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/auth/me, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mServicesController {/api/v1/services}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/:slug, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/list, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:serviceId/plans, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/:serviceId/plans, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/plans/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/services/admin/plans/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mInventoryController {/api/v1/inventory}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/single, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/bulk, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/plan/:planId, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/inventory/stock-counts, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOrdersController {/api/v1/orders}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/create, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/webhook, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/webhook/cashfree, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/status/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/admin/list, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/admin/:id/fulfill, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mCouponsController {/api/v1}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/orders/validate-coupon, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/:id/usage, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/coupons/bulk-generate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAccountController {/api/v1/account}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/orders, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/orders/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/subscriptions, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/account/preferences, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mSupportController {/api/v1/support}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support/admin, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support/admin/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/support/admin/:id/reply, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAdminController {/api/v1/admin}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/dashboard, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/users, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/users, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/users/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/audit-logs, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/settings/test-telegram, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/customers, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/customers/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/customers/:id/toggle-active, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/subscriptions, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/revenue-by-service, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/revenue-by-plan, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/coupon-performance, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/v1/admin/reports/orders-export, GET} route[39m[38;5;3m +0ms[39m
+[31m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mRedis error[39m
+[31m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [31m  ERROR[39m [38;5;3m[RedisService] [39m[31mAggregateError[39m
+[32m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +25ms[39m
+[31m[Nest] 18789  - [39m04/27/2026, 6:17:17 PM [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use :::3001[39m[38;5;3m +1ms[39m
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (/Users/harshanand/.gemini/antigravity/scratch/thickwire-api/node_modules/@nestjs/platform-express/adapters/express-adapter.js:95:32)
+    at /Users/harshanand/.gemini/antigravity/scratch/thickwire-api/node_modules/@nestjs/core/nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/Users/harshanand/.gemini/antigravity/scratch/thickwire-api/node_modules/@nestjs/core/nest-application.js:173:16)
+    at async bootstrap (/Users/harshanand/.gemini/antigravity/scratch/thickwire-api/src/main.ts:46:3) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+
+Node.js v24.12.0

@@ -1,0 +1,269 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Core Models ────────────────────────────────────────────
+
+model Service {
+  id           String    @id @default(uuid())
+  name         String
+  slug         String    @unique
+  logoUrl      String?
+  description  String?
+  displayOrder Int       @default(0)
+  isActive     Boolean   @default(true)
+  deletedAt    DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  plans        Plan[]
+  orders       Order[]
+}
+
+model Plan {
+  id            String      @id @default(uuid())
+  serviceId     String
+  name          String
+  slug          String
+  description   String?
+  price         Decimal     @db.Decimal(10, 2)
+  originalPrice Decimal?    @db.Decimal(10, 2)
+  durationDays  Int
+  isActive      Boolean     @default(true)
+  displayOrder  Int         @default(0)
+  deletedAt     DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  service       Service     @relation(fields: [serviceId], references: [id])
+  inventory     Inventory[]
+  orders        Order[]
+
+  @@unique([serviceId, slug])
+}
+
+model Inventory {
+  id                String    @id @default(uuid())
+  planId            String
+  contentEncrypted  String    // AES-256-GCM encrypted
+  isUsed            Boolean   @default(false)
+  usedAt            DateTime?
+  orderId           String?
+  uploadedByAdminId String
+  createdAt         DateTime  @default(now())
+  plan              Plan      @relation(fields: [planId], references: [id])
+}
+
+model Order {
+  id                String            @id @default(uuid())
+  customerName      String
+  customerEmail     String
+  customerPhone     String
+  serviceId         String
+  planId            String
+  amountPaid        Decimal           @db.Decimal(10, 2)
+  currency          String            @default("INR")
+  paymentGateway    String            @default("razorpay")
+  paymentReference  String?           @unique
+  paymentStatus     PaymentStatus     @default(PENDING)
+  fulfillmentStatus FulfillmentStatus @default(PENDING)
+  inventoryId       String?           @unique
+  deliveredAt       DateTime?
+  // Phase 2 additions
+  customerId        String?           // FK to CustomerAccount (nullable — guest orders)
+  couponId          String?           // FK to Coupon (nullable)
+  discountAmount    Decimal?          @db.Decimal(10, 2)
+  finalAmount       Decimal?          @db.Decimal(10, 2) // amountPaid after discount
+  whatsappOptedIn   Boolean           @default(false)
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  service           Service           @relation(fields: [serviceId], references: [id])
+  plan              Plan              @relation(fields: [planId], references: [id])
+  customer          CustomerAccount?  @relation(fields: [customerId], references: [id])
+  coupon            Coupon?           @relation(fields: [couponId], references: [id])
+  couponUsage       CouponUsage?
+  subscriptionExpiry SubscriptionExpiry?
+}
+
+enum PaymentStatus {
+  PENDING
+  CONFIRMED
+  FAILED
+  REFUNDED
+}
+
+enum FulfillmentStatus {
+  PENDING
+  FULFILLED
+  MANUAL_PENDING
+  MANUAL_FULFILLED
+}
+
+// ─── Admin & Auth ───────────────────────────────────────────
+
+model Admin {
+  id           String    @id @default(uuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  role         AdminRole @default(MANAGER)
+  totpSecret   String?
+  totpEnabled  Boolean   @default(false)
+  isActive     Boolean   @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  MANAGER
+  SUPPORT
+}
+
+// ─── Logging & Support ──────────────────────────────────────
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  adminId    String
+  action     String
+  entityType String
+  entityId   String
+  oldValue   Json?
+  newValue   Json?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+}
+
+model SupportTicket {
+  id            String       @id @default(uuid())
+  customerName  String
+  customerEmail String
+  orderId       String?
+  subject       String
+  message       String
+  status        TicketStatus @default(OPEN)
+  autoReplySent Boolean      @default(false)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+}
+
+model NotificationLog {
+  id           String   @id @default(uuid())
+  orderId      String?
+  channel      String   // email | telegram | whatsapp
+  recipient    String
+  templateName String
+  status       String   // sent | failed
+  sentAt       DateTime @default(now())
+}
+
+// ─── Phase 2: Customer Accounts ─────────────────────────────
+
+model CustomerAccount {
+  id               String    @id @default(uuid())
+  name             String
+  email            String    @unique
+  passwordHash     String?   // null for Google OAuth users
+  googleId         String?   @unique // null for email/password users
+  avatarUrl        String?
+  phone            String?
+  whatsappOptedIn  Boolean   @default(false)
+  isVerified       Boolean   @default(false)
+  verifyToken      String?
+  resetToken       String?
+  resetTokenExpiry DateTime?
+  isActive         Boolean   @default(true)
+  lastLoginAt      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  sessions         CustomerSession[]
+  orders           Order[]
+}
+
+model CustomerSession {
+  id           String          @id @default(uuid())
+  customerId   String
+  refreshToken String          @unique
+  expiresAt    DateTime
+  createdAt    DateTime        @default(now())
+  customer     CustomerAccount @relation(fields: [customerId], references: [id])
+}
+
+// ─── Phase 2: Subscription Expiry ───────────────────────────
+
+model SubscriptionExpiry {
+  id               String       @id @default(uuid())
+  orderId          String       @unique
+  customerId       String?
+  customerEmail    String
+  planId           String
+  serviceId        String
+  serviceName      String
+  planName         String
+  activatedAt      DateTime
+  expiresAt        DateTime
+  status           ExpiryStatus @default(ACTIVE)
+  reminder7Sent    Boolean      @default(false)
+  reminder3Sent    Boolean      @default(false)
+  reminder1Sent    Boolean      @default(false)
+  expiredAlertSent Boolean      @default(false)
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  order            Order        @relation(fields: [orderId], references: [id])
+}
+
+enum ExpiryStatus {
+  ACTIVE
+  EXPIRING_SOON
+  EXPIRED
+  RENEWED
+}
+
+// ─── Phase 2: Coupons & Discounts ───────────────────────────
+
+model Coupon {
+  id                   String       @id @default(uuid())
+  code                 String       @unique
+  description          String?
+  discountType         DiscountType @default(PERCENT)
+  discountValue        Decimal      @db.Decimal(10, 2)
+  maxUses              Int?         // null = unlimited
+  usedCount            Int          @default(0)
+  minOrderAmount       Decimal?     @db.Decimal(10, 2)
+  maxDiscountAmount    Decimal?     @db.Decimal(10, 2) // cap for PERCENT type
+  applicableServiceIds String[]     // empty = all services
+  applicablePlanIds    String[]     // empty = all plans
+  startsAt             DateTime     @default(now())
+  expiresAt            DateTime?
+  isActive             Boolean      @default(true)
+  createdAt            DateTime     @default(now())
+  orders               Order[]
+  usages               CouponUsage[]
+}
+
+enum DiscountType {
+  PERCENT
+  FLAT
+}
+
+model CouponUsage {
+  id         String   @id @default(uuid())
+  couponId   String
+  orderId    String   @unique
+  customerId String?
+  usedAt     DateTime @default(now())
+  coupon     Coupon   @relation(fields: [couponId], references: [id])
+  order      Order    @relation(fields: [orderId], references: [id])
+}
+
+// ─── Phase 3 Scaffold (out of scope for Phase 2) ────────────
+// AffiliateTracking, WalletTransaction — reserved for Phase 3

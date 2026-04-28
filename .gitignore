@@ -2,3 +2,8 @@ node_modules/
 dist/
 .env
 .env.local
+
+tsconfig.tsbuildinfo
+prisma/seed.d.ts
+prisma/seed.js
+prisma/seed.js.map

@@ -96,6 +96,22 @@ export class AdminController {
         return this.adminService.findAllSubscriptions({ status, search, page, limit });
     }
 
+    // ─── Delivered Credentials ────────────────────────────
+    @Get('subscriptions/delivered')
+    @Roles('SUPER_ADMIN', 'MANAGER')
+    async listDeliveredCredentials(
+        @Query('page') page?: number,
+        @Query('limit') limit?: number,
+    ) {
+        return this.adminService.getDeliveredCredentials({ page, limit });
+    }
+
+    @Get('orders/:id/credential')
+    @Roles('SUPER_ADMIN', 'MANAGER')
+    async getOrderCredential(@Param('id') id: string) {
+        return this.adminService.getOrderCredentialForAdmin(id);
+    }
+
     // ─── Reports ──────────────────────────────────────────
     @Get('reports/revenue-by-service')
     @Roles('SUPER_ADMIN', 'MANAGER')

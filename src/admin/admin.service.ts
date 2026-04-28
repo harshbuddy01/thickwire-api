@@ -1,12 +1,16 @@
-import { Injectable, Logger, BadRequestException } from '@nestjs/common';
+import { Injectable, Logger, BadRequestException, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { EncryptionService } from '../common/encryption.service';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AdminService {
     private readonly logger = new Logger(AdminService.name);
 
-    constructor(private readonly prisma: PrismaService) { }
+    constructor(
+        private readonly prisma: PrismaService,
+        private readonly encryption: EncryptionService,
+    ) { }
 
     // ─── Dashboard Stats ─────────────────────────────────
 
@@ -190,6 +194,98 @@ export class AdminService {
         ]);
 
         return { items, total, page, limit };
+    }
+
+    // ─── Delivered Credentials ───────────────────────────
+
+    async getDeliveredCredentials(filters?: {
+        page?: number;
+        limit?: number;
+    }) {
+        const page = filters?.page || 1;
+        const limit = filters?.limit || 25;
+        const skip = (page - 1) * limit;
+
+        const where: any = {
+            fulfillmentStatus: 'FULFILLED',
+            inventoryId: { not: null },
+        };
+
+        const [items, total] = await Promise.all([
+            this.prisma.order.findMany({
+                where,
+                orderBy: { deliveredAt: 'desc' },
+                skip,
+                take: limit,
+                select: {
+                    id: true,
+                    customerName: true,
+                    customerEmail: true,
+                    deliveredAt: true,
+                    service: { select: { name: true } },
+                    plan: { select: { name: true } },
+                    subscriptionExpiry: {
+                        select: {
+                            status: true,
+                            activatedAt: true,
+                            expiresAt: true,
+                        },
+                    },
+                },
+            }),
+            this.prisma.order.count({ where }),
+        ]);
+
+        return { items, total, page, limit };
+    }
+
+    async getOrderCredentialForAdmin(orderId: string) {
+        const order = await this.prisma.order.findUnique({
+            where: { id: orderId },
+            select: {
+                id: true,
+                customerName: true,
+                customerEmail: true,
+                inventoryId: true,
+                deliveredAt: true,
+                service: { select: { name: true } },
+                plan: { select: { name: true } },
+                subscriptionExpiry: {
+                    select: {
+                        activatedAt: true,
+                        expiresAt: true,
+                        status: true,
+                    },
+                },
+            },
+        });
+
+        if (!order || !order.inventoryId) {
+            throw new NotFoundException('Credential not found for this order');
+        }
+
+        const inventory = await this.prisma.inventory.findUnique({
+            where: { id: order.inventoryId },
+        });
+
+        if (!inventory) {
+            throw new NotFoundException('Inventory item not found');
+        }
+
+        const credential = this.encryption.decrypt(inventory.contentEncrypted);
+
+        return {
+            orderId: order.id,
+            customerName: order.customerName,
+            customerEmail: order.customerEmail,
+            serviceName: order.service?.name,
+            planName: order.plan?.name,
+            credential,
+            deliveredAt: order.deliveredAt,
+            activatedAt: order.subscriptionExpiry?.activatedAt || null,
+            expiresAt: order.subscriptionExpiry?.expiresAt || null,
+            status: order.subscriptionExpiry?.status || null,
+        };
     }
 
     // ─── Reporting ────────────────────────────────────────

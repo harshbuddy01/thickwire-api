@@ -17,6 +17,11 @@ export class AccountController {
         return this.accountService.getOrderDetail(req.user.id, id);
     }
 
+    @Get('orders/:id/credential')
+    async getOrderCredential(@Req() req: any, @Param('id') id: string) {
+        return this.accountService.getOrderCredential(req.user.id, id);
+    }
+
     @Get('subscriptions')
     async getSubscriptions(@Req() req: any) {
         return this.accountService.getSubscriptions(req.user.id);

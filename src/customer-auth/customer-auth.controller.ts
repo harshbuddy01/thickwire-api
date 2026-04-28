@@ -40,7 +40,7 @@ export class CustomerAuthController {
         this.setRefreshCookie(res, result.refreshToken, result.expiresAt);
 
         // Redirect to storefront with short-lived exchange token
-        const storefrontUrl = process.env.STOREFRONT_URL || 'http://localhost:3000';
+        const storefrontUrl = (process.env.STOREFRONT_URL || 'http://localhost:3000').trim();
         res.redirect(`${storefrontUrl}/auth/callback?token=${result.accessToken}`);
     }
 

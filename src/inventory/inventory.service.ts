@@ -60,25 +60,33 @@ export class InventoryService {
                     usedAt: true,
                     orderId: true,
                     createdAt: true,
-                    order: {
-                        select: {
-                            customerName: true,
-                            customerEmail: true,
-                            subscriptionExpiry: {
-                                select: {
-                                    expiresAt: true,
-                                    activatedAt: true,
-                                    status: true,
-                                },
-                            },
-                        },
-                    },
                 },
             }),
             this.prisma.inventory.count({ where: { planId } }),
         ]);
 
-        // Decrypt credentials for admin view
+        // Batch-fetch linked orders for used items
+        const orderIds = items.map(i => i.orderId).filter(Boolean) as string[];
+        const orders = orderIds.length > 0
+            ? await this.prisma.order.findMany({
+                where: { id: { in: orderIds } },
+                select: {
+                    id: true,
+                    customerName: true,
+                    customerEmail: true,
+                    subscriptionExpiry: {
+                        select: {
+                            expiresAt: true,
+                            activatedAt: true,
+                            status: true,
+                        },
+                    },
+                },
+            })
+            : [];
+        const orderMap = new Map(orders.map(o => [o.id, o]));
+
+        // Decrypt credentials and attach order data
         const decryptedItems = items.map((item) => {
             let decryptedContent = '';
             try {
@@ -87,7 +95,11 @@ export class InventoryService {
                 decryptedContent = '[decryption failed]';
             }
             const { contentEncrypted, ...rest } = item;
-            return { ...rest, decryptedContent };
+            return {
+                ...rest,
+                decryptedContent,
+                order: item.orderId ? orderMap.get(item.orderId) || null : null,
+            };
         });
 
         return { items: decryptedItems, total, page, limit };

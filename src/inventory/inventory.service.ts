@@ -55,16 +55,42 @@ export class InventoryService {
                 take: limit,
                 select: {
                     id: true,
+                    contentEncrypted: true,
                     isUsed: true,
                     usedAt: true,
                     orderId: true,
                     createdAt: true,
+                    order: {
+                        select: {
+                            customerName: true,
+                            customerEmail: true,
+                            subscriptionExpiry: {
+                                select: {
+                                    expiresAt: true,
+                                    activatedAt: true,
+                                    status: true,
+                                },
+                            },
+                        },
+                    },
                 },
             }),
             this.prisma.inventory.count({ where: { planId } }),
         ]);
 
-        return { items, total, page, limit };
+        // Decrypt credentials for admin view
+        const decryptedItems = items.map((item) => {
+            let decryptedContent = '';
+            try {
+                decryptedContent = this.encryption.decrypt(item.contentEncrypted);
+            } catch (e) {
+                decryptedContent = '[decryption failed]';
+            }
+            const { contentEncrypted, ...rest } = item;
+            return { ...rest, decryptedContent };
+        });
+
+        return { items: decryptedItems, total, page, limit };
     }
 
     async getStockCounts() {

@@ -25,6 +25,14 @@ export class SupportService {
         return ticket;
     }
 
+    async getMyTickets(email: string) {
+        return this.prisma.supportTicket.findMany({
+            where: { customerEmail: email },
+            orderBy: { createdAt: 'desc' },
+            include: { messages: { orderBy: { createdAt: 'asc' } } }
+        });
+    }
+
     async createTicket(data: { customerName: string; customerEmail: string; subject: string; message: string; orderId?: string }) {
         const ticket = await this.prisma.supportTicket.create({
             data: {

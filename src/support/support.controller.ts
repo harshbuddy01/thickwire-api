@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, UseGuards, Req } from '@nestjs/common';
+import { Request } from 'express';
 import { SupportService } from './support.service';
 import { JwtAuthGuard } from '../common/guards/jwt-auth.guard';
 import { RolesGuard } from '../common/guards/roles.guard';
@@ -7,6 +8,12 @@ import { Roles } from '../common/decorators/roles.decorator';
 @Controller('support')
 export class SupportController {
     constructor(private readonly supportService: SupportService) { }
+
+    @Get('my-tickets')
+    @UseGuards(JwtAuthGuard)
+    async getMyTickets(@Req() req: Request) {
+        return this.supportService.getMyTickets((req.user as any).email);
+    }
 
     @Post()
     async createTicket(@Body() body: { customerName: string; customerEmail: string; subject: string; message: string; orderId?: string }) {

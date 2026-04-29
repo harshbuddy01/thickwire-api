@@ -21,12 +21,16 @@ export class EmailService {
       },
     });
     
-    // Force all emails to be sent FROM the verified Brevo sender to prevent rejection
-    this.fromEmail = this.config.get('SMTP_FROM_EMAIL', 'orders@streamkart.store');
+    // The actual email addresses to use
+    const baseOrdersEmail = this.config.get('SMTP_ORDERS_EMAIL', 'orders@streamkart.store');
+    const baseSupportEmail = this.config.get('SMTP_SUPPORT_EMAIL', 'support@streamkart.store');
     
-    // The visual name shown in the customer's inbox, but technically originating from the verified email
-    this.ordersEmail = `ThickWire <${this.fromEmail}>`;
-    this.supportEmail = `ThickWire Support <${this.fromEmail}>`;
+    // The visual name shown in the customer's inbox with the corresponding verified email
+    this.ordersEmail = `ThickWire <${baseOrdersEmail}>`;
+    this.supportEmail = `ThickWire Support <${baseSupportEmail}>`;
+    
+    // Fallback if no specific 'from' is provided
+    this.fromEmail = baseOrdersEmail;
   }
 
   async sendOrderConfirmation(to: string, data: { customerName: string; orderId: string; serviceName: string; planName: string; amount: string }) {

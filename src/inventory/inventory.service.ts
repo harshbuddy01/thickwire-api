@@ -45,14 +45,16 @@ export class InventoryService {
         return { count: result.count };
     }
 
-    async findByPlan(planId: string, page = 1, limit = 50) {
-        const skip = (page - 1) * limit;
+    async findByPlan(planId: string, page: number | string = 1, limit: number | string = 50) {
+        const pageNum = Math.max(1, parseInt(page as string) || 1);
+        const limitNum = Math.max(1, parseInt(limit as string) || 50);
+        const skip = (pageNum - 1) * limitNum;
         const [items, total] = await Promise.all([
             this.prisma.inventory.findMany({
                 where: { planId },
                 orderBy: { createdAt: 'desc' },
                 skip,
-                take: limit,
+                take: limitNum,
                 select: {
                     id: true,
                     contentEncrypted: true,

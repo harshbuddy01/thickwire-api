@@ -7,6 +7,9 @@ export class EmailService {
   private transporter: any;
   private fromEmail: string;
 
+  private supportEmail = 'ThickWire Support <support@streamkart.store>';
+  private ordersEmail = 'ThickWire <orders@streamkart.store>';
+
   constructor(private readonly config: ConfigService) {
     const nodemailer = require('nodemailer');
     this.transporter = nodemailer.createTransport({
@@ -17,23 +20,23 @@ export class EmailService {
         pass: this.config.get('SMTP_PASS', 'sMYSFpvKtVh2BI71'),
       },
     });
-    this.fromEmail = this.config.get('SMTP_FROM_EMAIL', 'ThickWire <orders@yourdomain.com>');
+    this.fromEmail = this.config.get('SMTP_FROM_EMAIL', this.ordersEmail);
   }
 
   async sendOrderConfirmation(to: string, data: { customerName: string; orderId: string; serviceName: string; planName: string; amount: string }) {
-    return this.send(to, 'Order Confirmed — ThickWire', this.tplOrderConfirmation(data));
+    return this.send(to, 'Order Confirmed — ThickWire', this.tplOrderConfirmation(data), { from: this.ordersEmail, replyTo: 'support@streamkart.store' });
   }
 
   async sendDelivery(to: string, data: { customerName: string; orderId: string; serviceName: string; planName: string; content: string }) {
-    return this.send(to, 'Your Order is Ready — ThickWire', this.tplDelivery(data));
+    return this.send(to, 'Your Order is Ready — ThickWire', this.tplDelivery(data), { from: this.ordersEmail, replyTo: 'support@streamkart.store' });
   }
 
   async sendOutOfStock(to: string, data: { orderId: string; serviceName: string; planName: string }) {
-    return this.send(to, 'Order Under Review — ThickWire', this.tplOutOfStock(data));
+    return this.send(to, 'Order Under Review — ThickWire', this.tplOutOfStock(data), { from: this.ordersEmail, replyTo: 'support@streamkart.store' });
   }
 
   async sendSupportAutoReply(to: string, data: { customerName: string; ticketId: string; subject: string }) {
-    return this.send(to, `Re: ${data.subject} — ThickWire Support`, this.tplSupportAutoReply(data));
+    return this.send(to, `Re: ${data.subject} — ThickWire Support`, this.tplSupportAutoReply(data), { from: this.supportEmail, replyTo: 'support@streamkart.store' });
   }
 
   async sendSupportReply(to: string, data: { customerName: string; ticketId: string; subject: string; replyText: string }) {
@@ -44,11 +47,11 @@ export class EmailService {
       <div style="background:#f3f4f6;padding:16px;border-radius:8px;margin:16px 0;white-space:pre-wrap;">${data.replyText}</div>
       <p>If you have further questions, please reply to this email or open a new ticket.</p>
       <hr/><p style="color:#888;font-size:12px">ThickWire Support</p>
-    </div>`);
+    </div>`, { from: this.supportEmail, replyTo: 'support@streamkart.store' });
   }
 
   async sendLowStockAlert(to: string, data: { items: { serviceName: string; planName: string; count: number }[] }) {
-    return this.send(to, '⚠️ Low Stock Alert — ThickWire', this.tplLowStock(data));
+    return this.send(to, '⚠️ Low Stock Alert — ThickWire', this.tplLowStock(data), { from: this.ordersEmail });
   }
 
   // ─── Phase 2: Customer Auth Emails ────────────────────
@@ -61,7 +64,7 @@ export class EmailService {
       <a href="${data.verifyUrl}" style="display:inline-block;background:#6366f1;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin:16px 0">Verify Email</a>
       <p style="color:#888;font-size:13px">If you didn't create an account, you can safely ignore this email.</p>
       <hr/><p style="color:#888;font-size:12px">ThickWire — Digital Marketplace</p>
-    </div>`);
+    </div>`, { from: this.ordersEmail, replyTo: 'support@streamkart.store' });
   }
 
   async sendWelcome(to: string, data: { customerName: string }) {
@@ -72,7 +75,7 @@ export class EmailService {
       <p>You can now track your orders, manage subscriptions, and get expiry reminders — all from your account dashboard.</p>
       <a href="${process.env.STOREFRONT_URL || 'http://localhost:3000'}/account" style="display:inline-block;background:#22c55e;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin:16px 0">Go to My Account</a>
       <hr/><p style="color:#888;font-size:12px">ThickWire — Digital Marketplace</p>
-    </div>`);
+    </div>`, { from: this.ordersEmail, replyTo: 'support@streamkart.store' });
   }
 
   async sendPasswordReset(to: string, data: { customerName: string; resetUrl: string }) {
@@ -83,7 +86,7 @@ export class EmailService {
       <a href="${data.resetUrl}" style="display:inline-block;background:#f59e0b;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin:16px 0">Reset Password</a>
       <p style="color:#888;font-size:13px">This link expires in 1 hour. If you didn't request this, your account is safe.</p>
       <hr/><p style="color:#888;font-size:12px">ThickWire — Digital Marketplace</p>
-    </div>`);
+    </div>`, { from: this.ordersEmail, replyTo: 'support@streamkart.store' });
   }
 
   // ─── Phase 2: Subscription Expiry Emails ─────────────
@@ -100,13 +103,14 @@ export class EmailService {
       <a href="${data.renewUrl}" style="display:inline-block;background:${urgency.color};color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin:16px 0">Renew Now</a>
       <p style="color:#888;font-size:13px">Don't lose access — renew before it expires.</p>
       <hr/><p style="color:#888;font-size:12px">ThickWire — Digital Marketplace</p>
-    </div>`);
+    </div>`, { from: this.ordersEmail, replyTo: 'support@streamkart.store' });
   }
 
-  private async send(to: string, subject: string, html: string) {
+  private async send(to: string, subject: string, html: string, options?: { from?: string; replyTo?: string }) {
     try {
       await this.transporter.sendMail({
-        from: this.fromEmail,
+        from: options?.from || this.fromEmail,
+        replyTo: options?.replyTo,
         to,
         subject,
         html,

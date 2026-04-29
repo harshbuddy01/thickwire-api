@@ -30,11 +30,17 @@ export class SupportService {
                 status: 'OPEN'
             }
         });
-        await this.emailService.sendSupportAutoReply(ticket.customerEmail, {
-            customerName: ticket.customerName,
-            ticketId: ticket.id,
-            subject: ticket.subject
-        });
+        
+        try {
+            await this.emailService.sendSupportAutoReply(ticket.customerEmail, {
+                customerName: ticket.customerName,
+                ticketId: ticket.id,
+                subject: ticket.subject
+            });
+        } catch (error) {
+            console.error(`Failed to send support auto-reply to ${ticket.customerEmail}:`, error);
+        }
+        
         return ticket;
     }
 

@@ -49,9 +49,9 @@ export class TelegramService {
         );
     }
 
-    async sendPaymentExpired(data: { orderId: string; customerName: string; amount: string }) {
+    async sendPaymentExpired(data: { orderId: string; customerName: string; amount: string; reason: string }) {
         return this.send(
-            `⏰ *Order Auto-Cancelled*\nOrder: \`${data.orderId.slice(0, 8)}\`\nCustomer: ${data.customerName}\nAmount: ₹${data.amount}\nReason: Payment not completed within 5 minutes`,
+            `⏰ *Order Auto-Cancelled*\nOrder: \`${data.orderId.slice(0, 8)}\`\nCustomer: ${data.customerName}\nAmount: ₹${data.amount}\nReason: ${data.reason}`,
         );
     }
 

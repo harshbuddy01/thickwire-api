@@ -254,6 +254,7 @@ export class CronService {
                         orderId: order.id,
                         customerName: order.customerName,
                         amount: String(order.amountPaid),
+                        reason: reason,
                     });
                 }
             } catch (err) {
@@ -295,6 +296,14 @@ export class CronService {
             await this.email.sendAdminNotification({
                 subject: `🚨 URGENT: Order #${order.id.slice(0, 8)} Paid but NOT Delivered`,
                 body: `Customer: ${order.customerName} (${order.customerEmail})\nService: ${order.service.name} — ${order.plan.name}\nAmount: ₹${order.amountPaid}\n\nThis order has been paid for over 5 minutes but has not been auto-delivered. Please check inventory and fulfill manually.`,
+            });
+
+            // Send email to customer
+            await this.email.sendOrderProcessingDelay(order.customerEmail, {
+                customerName: order.customerName,
+                orderId: order.id,
+                serviceName: order.service.name,
+                planName: order.plan.name,
             });
 
             // Mark fulfillment as MANUAL_PENDING so we don't re-alert

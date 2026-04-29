@@ -126,6 +126,17 @@ export class EmailService {
     </div>`, { from: this.ordersEmail, replyTo: 'support@streamkart.store' });
   }
 
+  async sendOrderProcessingDelay(to: string, data: { customerName: string; orderId: string; serviceName: string; planName: string }) {
+    return this.send(to, 'Important Update on Your Order — ThickWire', `<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:20px">
+      <h2 style="color:#f59e0b">Order Under Processing ⏳</h2>
+      <p>Hi ${data.customerName},</p>
+      <p>Your payment for <strong>${data.serviceName} — ${data.planName}</strong> (Order #${data.orderId.slice(0, 8)}) was successful!</p>
+      <p>We are currently experiencing a slight delay in automatically delivering your credentials. Our team has been notified and is working to fulfill your order manually as quickly as possible.</p>
+      <p>You will receive another email with your credentials very soon.</p>
+      <hr/><p style="color:#888;font-size:12px">ThickWire Support</p>
+    </div>`, { from: this.ordersEmail, replyTo: 'support@streamkart.store' });
+  }
+
   private async send(to: string, subject: string, html: string, options?: { from?: string; replyTo?: string }) {
     try {
       await this.transporter.sendMail({

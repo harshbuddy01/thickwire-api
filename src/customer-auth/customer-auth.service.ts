@@ -116,6 +116,11 @@ export class CustomerAuthService {
                     lastLoginAt: new Date(),
                 },
             });
+
+            // Send welcome email for new Google signups
+            this.email.sendWelcome(customer.email, {
+                customerName: customer.name,
+            }).catch(err => this.logger.error(`Welcome email failed for ${customer.email}: ${err.message}`));
         }
 
         // Link guest orders
@@ -208,7 +213,10 @@ export class CustomerAuthService {
 
     // ── Internal Helpers ───────────────────────────────
     private async issueTokens(customerId: string) {
-        const accessToken = this.jwt.sign({ sub: customerId, type: 'customer' });
+        const accessToken = this.jwt.sign(
+            { sub: customerId, type: 'customer' },
+            { expiresIn: '2h' },
+        );
 
         const refreshToken = randomBytes(48).toString('hex');
         const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days

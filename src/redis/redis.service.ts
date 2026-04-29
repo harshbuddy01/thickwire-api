@@ -1,42 +1,96 @@
-import { Injectable, OnModuleDestroy, Logger } from '@nestjs/common';
+import { Injectable, OnModuleDestroy, OnModuleInit, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import Redis from 'ioredis';
 
 @Injectable()
-export class RedisService implements OnModuleDestroy {
+export class RedisService implements OnModuleDestroy, OnModuleInit {
     private readonly client: Redis;
     private readonly logger = new Logger(RedisService.name);
+    private isConnected = false;
 
     constructor(private readonly configService: ConfigService) {
         const redisUrl = this.configService.get<string>('REDIS_URL') || 'redis://localhost:6379';
-        this.client = new Redis(redisUrl);
-        this.client.on('error', (err) => this.logger.error('Redis error', err));
+        this.client = new Redis(redisUrl, {
+            lazyConnect: true,
+            retryStrategy(times) {
+                if (times > 5) {
+                    return null; // Stop retrying after 5 attempts
+                }
+                return Math.min(times * 500, 2000);
+            },
+            maxRetriesPerRequest: 3,
+            enableOfflineQueue: false,
+        });
+
+        this.client.on('connect', () => {
+            this.isConnected = true;
+            this.logger.log('Redis connected');
+        });
+        this.client.on('error', (err) => {
+            this.isConnected = false;
+            this.logger.warn(`Redis error: ${err.message}`);
+        });
+        this.client.on('close', () => {
+            this.isConnected = false;
+        });
+    }
+
+    async onModuleInit() {
+        try {
+            await this.client.connect();
+        } catch (err) {
+            this.logger.warn(`Redis unavailable — running without cache: ${(err as Error).message}`);
+        }
     }
 
     async onModuleDestroy() {
-        await this.client.quit();
+        try {
+            await this.client.quit();
+        } catch {
+            // Already disconnected
+        }
     }
 
     async get(key: string): Promise<string | null> {
-        return this.client.get(key);
+        if (!this.isConnected) return null;
+        try {
+            return await this.client.get(key);
+        } catch {
+            return null;
+        }
     }
 
     async set(key: string, value: string, ttlSeconds?: number): Promise<void> {
-        if (ttlSeconds) {
-            await this.client.set(key, value, 'EX', ttlSeconds);
-        } else {
-            await this.client.set(key, value);
+        if (!this.isConnected) return;
+        try {
+            if (ttlSeconds) {
+                await this.client.set(key, value, 'EX', ttlSeconds);
+            } else {
+                await this.client.set(key, value);
+            }
+        } catch {
+            // Silently fail — cache is optional
         }
     }
 
     async del(key: string): Promise<void> {
-        await this.client.del(key);
+        if (!this.isConnected) return;
+        try {
+            await this.client.del(key);
+        } catch {
+            // Silently fail
+        }
     }
 
     async delByPattern(pattern: string): Promise<void> {
-        const keys = await this.client.keys(pattern);
-        if (keys.length > 0) {
-            await this.client.del(...keys);
+        if (!this.isConnected) return;
+        try {
+            const keys = await this.client.keys(pattern);
+            if (keys.length > 0) {
+                await this.client.del(...keys);
+            }
+        } catch {
+            // Silently fail
         }
     }
 
@@ -54,3 +108,4 @@ export class RedisService implements OnModuleDestroy {
         await this.set(key, JSON.stringify(value), ttlSeconds);
     }
 }
+

@@ -92,8 +92,8 @@ export class CustomerAuthController {
     private setRefreshCookie(res: Response, token: string, expiresAt: Date) {
         res.cookie('refreshToken', token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'lax',
+            secure: true,
+            sameSite: 'none',
             expires: expiresAt,
             path: '/',
         });

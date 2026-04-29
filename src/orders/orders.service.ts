@@ -78,6 +78,10 @@ export class OrdersService {
 
         const amountInPaise = Math.round(finalAmount * 100);
 
+        if (amountInPaise < 100) {
+            throw new BadRequestException('Order amount must be at least ₹1 after discounts');
+        }
+
         let rzpOrder: any = null;
         let cfOrder: any = null;
         const gateway = data.gateway || 'razorpay';

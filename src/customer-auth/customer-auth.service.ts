@@ -118,9 +118,10 @@ export class CustomerAuthService {
             });
 
             // Send welcome email for new Google signups
-            this.email.sendWelcome(customer.email, {
+            const customerEmail = customer.email;
+            this.email.sendWelcome(customerEmail, {
                 customerName: customer.name,
-            }).catch(err => this.logger.error(`Welcome email failed for ${customer.email}: ${err.message}`));
+            }).catch(err => this.logger.error(`Welcome email failed for ${customerEmail}: ${err.message}`));
         }
 
         // Link guest orders

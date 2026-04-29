@@ -39,6 +39,7 @@ export class SupportService {
                 customerName: data.customerName,
                 customerEmail: data.customerEmail,
                 subject: data.subject,
+                message: data.message, // Add this back
                 orderId: data.orderId,
                 status: 'OPEN',
                 messages: {

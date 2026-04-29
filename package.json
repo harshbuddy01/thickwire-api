@@ -4,6 +4,7 @@
   "description": "ThickWire Marketplace Backend API",
   "private": true,
   "scripts": {
+    "prebuild": "npx prisma generate",
     "build": "tsc -p tsconfig.json",
     "start": "npx prisma db push && npm run prisma:seed && node dist/main",
     "start:dev": "nest start --watch",

@@ -52,15 +52,14 @@ export class SupportService {
             include: { messages: true }
         });
         
-        try {
-            await this.emailService.sendSupportAutoReply(ticket.customerEmail, {
-                customerName: ticket.customerName,
-                ticketId: ticket.id,
-                subject: ticket.subject
-            });
-        } catch (error) {
+        // Fire-and-forget email to avoid blocking the HTTP response if SMTP is slow
+        this.emailService.sendSupportAutoReply(ticket.customerEmail, {
+            customerName: ticket.customerName,
+            ticketId: ticket.id,
+            subject: ticket.subject
+        }).catch(error => {
             console.error(`Failed to send support auto-reply to ${ticket.customerEmail}:`, error);
-        }
+        });
         
         return ticket;
     }
@@ -76,16 +75,15 @@ export class SupportService {
             }
         });
 
-        try {
-            await this.emailService.sendSupportReply(ticket.customerEmail, {
-                customerName: ticket.customerName,
-                ticketId: ticket.id,
-                subject: ticket.subject,
-                replyText
-            });
-        } catch (error) {
+        // Fire-and-forget email
+        this.emailService.sendSupportReply(ticket.customerEmail, {
+            customerName: ticket.customerName,
+            ticketId: ticket.id,
+            subject: ticket.subject,
+            replyText
+        }).catch(error => {
             console.error(`Failed to send support reply to ${ticket.customerEmail}:`, error);
-        }
+        });
 
         return this.getTicketById(id);
     }

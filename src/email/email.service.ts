@@ -60,6 +60,16 @@ export class EmailService {
     return this.send(to, '⚠️ Low Stock Alert — ThickWire', this.tplLowStock(data), { from: this.ordersEmail });
   }
 
+  async sendAdminNotification(data: { subject: string; body: string }) {
+    const fallbackEmail = this.config.get<string>('SMTP_FROM_EMAIL', 'orders@streamkart.store');
+    const adminEmail = this.config.get<string>('ADMIN_NOTIFICATION_EMAIL', fallbackEmail);
+    return this.send(adminEmail, data.subject, `<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:20px">
+      <h2 style="color:#6366f1">Support Notification</h2>
+      <div style="background:#f3f4f6;padding:16px;border-radius:8px;margin:16px 0;white-space:pre-wrap;">${data.body}</div>
+      <hr/><p style="color:#888;font-size:12px">ThickWire Admin Alert</p>
+    </div>`, { from: this.supportEmail });
+  }
+
   // ─── Phase 2: Customer Auth Emails ────────────────────
 
   async sendVerification(to: string, data: { customerName: string; verifyUrl: string }) {

@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { EmailService } from '../email/email.service';
 
@@ -99,9 +99,26 @@ export class SupportService {
             }
         });
 
+        // Notify admin of customer reply (fire-and-forget)
+        this.emailService.sendAdminNotification({
+            subject: `[Reply] Ticket #${id.substring(0, 8)}: ${ticket.subject}`,
+            body: `Customer ${ticket.customerName} (${ticket.customerEmail}) replied:\n\n${replyText}`,
+        }).catch(err => console.error('Admin notify on customer reply failed:', err));
+
         return this.prisma.supportTicket.update({
             where: { id },
             data: { status: 'OPEN', updatedAt: new Date() },
+            include: { messages: { orderBy: { createdAt: 'asc' } } }
+        });
+    }
+
+    async submitRating(id: string, rating: number) {
+        if (rating < 1 || rating > 5) throw new BadRequestException('Rating must be 1-5');
+        const ticket = await this.getTicketById(id);
+        if (ticket.status !== 'RESOLVED') throw new BadRequestException('Can only rate resolved tickets');
+        return this.prisma.supportTicket.update({
+            where: { id },
+            data: { rating },
             include: { messages: { orderBy: { createdAt: 'asc' } } }
         });
     }

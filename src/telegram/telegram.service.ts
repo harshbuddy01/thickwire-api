@@ -43,6 +43,24 @@ export class TelegramService {
         return this.send(`⚠️ *Low Stock Alert*\n${list}`);
     }
 
+    async sendPaymentFailed(data: { orderId: string; customerName: string; reason: string }) {
+        return this.send(
+            `❌ *Payment Failed*\nOrder: \`${data.orderId.slice(0, 8)}\`\nCustomer: ${data.customerName}\nReason: ${data.reason}`,
+        );
+    }
+
+    async sendPaymentExpired(data: { orderId: string; customerName: string; amount: string }) {
+        return this.send(
+            `⏰ *Order Auto-Cancelled*\nOrder: \`${data.orderId.slice(0, 8)}\`\nCustomer: ${data.customerName}\nAmount: ₹${data.amount}\nReason: Payment not completed within 5 minutes`,
+        );
+    }
+
+    async sendUnfulfilledAlert(data: { orderId: string; customerName: string; amount: string }) {
+        return this.send(
+            `🚨 *URGENT: Payment Confirmed But NOT Delivered*\nOrder: \`${data.orderId.slice(0, 8)}\`\nCustomer: ${data.customerName}\nAmount: ₹${data.amount}\nAction required immediately!`,
+        );
+    }
+
     async testConnection(): Promise<boolean> {
         try {
             await this.send('🔔 ThickWire bot connection test successful!');

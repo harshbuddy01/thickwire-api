@@ -93,6 +93,7 @@ enum PaymentStatus {
   CONFIRMED
   FAILED
   REFUNDED
+  EXPIRED
 }
 
 enum FulfillmentStatus {

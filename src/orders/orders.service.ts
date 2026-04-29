@@ -156,6 +156,49 @@ export class OrdersService {
         };
     }
 
+    // ─── Verify Frontend Payment ──────────────────────────
+    async verifyPayment(data: { razorpay_order_id: string, razorpay_payment_id: string, razorpay_signature: string }) {
+        const secret = this.config.get('RAZORPAY_KEY_SECRET');
+        if (!secret) throw new BadRequestException('Razorpay secret not configured');
+
+        const generated_signature = createHmac('sha256', secret)
+            .update(data.razorpay_order_id + '|' + data.razorpay_payment_id)
+            .digest('hex');
+
+        if (generated_signature !== data.razorpay_signature) {
+            throw new BadRequestException('Signature mismatch');
+        }
+
+        const order = await this.prisma.order.findUnique({
+            where: { paymentReference: data.razorpay_order_id },
+        });
+        if (!order) throw new BadRequestException('Order not found');
+
+        if (order.paymentStatus === 'CONFIRMED') {
+            return { success: true, status: 'already_processed', orderId: order.id };
+        }
+
+        // Mark as paid
+        await this.prisma.order.update({
+            where: { id: order.id },
+            data: { paymentStatus: 'CONFIRMED' },
+        });
+
+        // Fulfill
+        const result = await this.automation.assignInventory(order.id, order.planId);
+        if (result) {
+            await this.notification.sendOrderDelivered(order, result.content);
+        } else {
+            await this.prisma.order.update({
+                where: { id: order.id },
+                data: { fulfillmentStatus: 'MANUAL_PENDING' },
+            });
+            await this.notification.sendOutOfStock(order);
+        }
+
+        return { success: true, status: 'processed', orderId: order.id };
+    }
+
     // ─── Webhook ──────────────────────────────────────────
 
     async handleWebhook(rawBody: Buffer, signature: string) {

@@ -29,6 +29,17 @@ export class OrdersController {
         return this.ordersService.createOrder(body);
     }
 
+    @Post('verify-payment')
+    async verifyPayment(
+        @Body() body: {
+            razorpay_order_id: string;
+            razorpay_payment_id: string;
+            razorpay_signature: string;
+        },
+    ) {
+        return this.ordersService.verifyPayment(body);
+    }
+
     @Post('webhook')
     @HttpCode(HttpStatus.OK)
     async webhook(

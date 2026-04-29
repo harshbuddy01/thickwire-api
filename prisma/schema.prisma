@@ -138,16 +138,26 @@ model AuditLog {
 }
 
 model SupportTicket {
-  id            String       @id @default(uuid())
+  id            String          @id @default(uuid())
   customerName  String
   customerEmail String
   orderId       String?
   subject       String
   message       String
-  status        TicketStatus @default(OPEN)
-  autoReplySent Boolean      @default(false)
-  createdAt     DateTime     @default(now())
-  updatedAt     DateTime     @updatedAt
+  status        TicketStatus    @default(OPEN)
+  autoReplySent Boolean         @default(false)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  messages      TicketMessage[]
+}
+
+model TicketMessage {
+  id        String        @id @default(uuid())
+  ticketId  String
+  ticket    SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  sender    String        @default("CUSTOMER") // "CUSTOMER" or "ADMIN"
+  text      String
+  createdAt DateTime      @default(now())
 }
 
 enum TicketStatus {

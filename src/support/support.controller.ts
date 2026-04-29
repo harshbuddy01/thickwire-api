@@ -27,10 +27,22 @@ export class SupportController {
         return this.supportService.getTicketById(id);
     }
 
+    @Post(':id/reply')
+    async customerReplyToTicket(@Param('id') id: string, @Body() body: { replyText: string }) {
+        return this.supportService.customerReply(id, body.replyText);
+    }
+
     @Post('admin/:id/reply')
     @UseGuards(JwtAuthGuard, RolesGuard)
     @Roles('SUPER_ADMIN', 'MANAGER', 'SUPPORT')
-    async replyToTicket(@Param('id') id: string, @Body() body: { replyText: string }) {
+    async adminReplyToTicket(@Param('id') id: string, @Body() body: { replyText: string }) {
         return this.supportService.replyToTicket(id, body.replyText);
+    }
+    
+    @Post('admin/:id/resolve')
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles('SUPER_ADMIN', 'MANAGER', 'SUPPORT')
+    async resolveTicket(@Param('id') id: string) {
+        return this.supportService.resolveTicket(id);
     }
 }

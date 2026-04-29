@@ -11,13 +11,15 @@ export class SupportService {
 
     async getAllTickets() {
         return this.prisma.supportTicket.findMany({
-            orderBy: { createdAt: 'desc' }
+            orderBy: { createdAt: 'desc' },
+            include: { messages: { orderBy: { createdAt: 'asc' } } }
         });
     }
 
     async getTicketById(id: string) {
         const ticket = await this.prisma.supportTicket.findUnique({
-            where: { id }
+            where: { id },
+            include: { messages: { orderBy: { createdAt: 'asc' } } }
         });
         if (!ticket) throw new NotFoundException('Ticket not found');
         return ticket;
@@ -26,9 +28,19 @@ export class SupportService {
     async createTicket(data: { customerName: string; customerEmail: string; subject: string; message: string; orderId?: string }) {
         const ticket = await this.prisma.supportTicket.create({
             data: {
-                ...data,
-                status: 'OPEN'
-            }
+                customerName: data.customerName,
+                customerEmail: data.customerEmail,
+                subject: data.subject,
+                orderId: data.orderId,
+                status: 'OPEN',
+                messages: {
+                    create: {
+                        sender: 'CUSTOMER',
+                        text: data.message
+                    }
+                }
+            },
+            include: { messages: true }
         });
         
         try {
@@ -47,16 +59,51 @@ export class SupportService {
     async replyToTicket(id: string, replyText: string) {
         const ticket = await this.getTicketById(id);
 
-        await this.emailService.sendSupportReply(ticket.customerEmail, {
-            customerName: ticket.customerName,
-            ticketId: ticket.id,
-            subject: ticket.subject,
-            replyText
+        await this.prisma.ticketMessage.create({
+            data: {
+                ticketId: id,
+                sender: 'ADMIN',
+                text: replyText
+            }
+        });
+
+        try {
+            await this.emailService.sendSupportReply(ticket.customerEmail, {
+                customerName: ticket.customerName,
+                ticketId: ticket.id,
+                subject: ticket.subject,
+                replyText
+            });
+        } catch (error) {
+            console.error(`Failed to send support reply to ${ticket.customerEmail}:`, error);
+        }
+
+        return this.getTicketById(id);
+    }
+    
+    async customerReply(id: string, replyText: string) {
+        const ticket = await this.getTicketById(id);
+
+        await this.prisma.ticketMessage.create({
+            data: {
+                ticketId: id,
+                sender: 'CUSTOMER',
+                text: replyText
+            }
         });
 
         return this.prisma.supportTicket.update({
             where: { id },
-            data: { status: 'RESOLVED', updatedAt: new Date() }
+            data: { status: 'OPEN', updatedAt: new Date() },
+            include: { messages: { orderBy: { createdAt: 'asc' } } }
+        });
+    }
+    
+    async resolveTicket(id: string) {
+        return this.prisma.supportTicket.update({
+            where: { id },
+            data: { status: 'RESOLVED', updatedAt: new Date() },
+            include: { messages: { orderBy: { createdAt: 'asc' } } }
         });
     }
 }

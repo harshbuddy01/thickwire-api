@@ -7,8 +7,8 @@ export class EmailService {
   private transporter: any;
   private fromEmail: string;
 
-  private supportEmail = 'ThickWire Support <support@streamkart.store>';
-  private ordersEmail = 'ThickWire <orders@streamkart.store>';
+  private supportEmail: string;
+  private ordersEmail: string;
 
   constructor(private readonly config: ConfigService) {
     const nodemailer = require('nodemailer');
@@ -20,7 +20,13 @@ export class EmailService {
         pass: this.config.get('SMTP_PASS', 'sMYSFpvKtVh2BI71'),
       },
     });
-    this.fromEmail = this.config.get('SMTP_FROM_EMAIL', this.ordersEmail);
+    
+    // Force all emails to be sent FROM the verified Brevo sender to prevent rejection
+    this.fromEmail = this.config.get('SMTP_FROM_EMAIL', 'orders@streamkart.store');
+    
+    // The visual name shown in the customer's inbox, but technically originating from the verified email
+    this.ordersEmail = `ThickWire <${this.fromEmail}>`;
+    this.supportEmail = `ThickWire Support <${this.fromEmail}>`;
   }
 
   async sendOrderConfirmation(to: string, data: { customerName: string; orderId: string; serviceName: string; planName: string; amount: string }) {

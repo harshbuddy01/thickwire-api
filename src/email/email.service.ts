@@ -46,7 +46,7 @@ export class EmailService {
   }
 
   async sendSupportReply(to: string, data: { customerName: string; ticketId: string; subject: string; replyText: string }) {
-    return this.send(to, `Re: ${data.subject} — ThickWire Support`, `<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:20px">
+    return this.send(to, `[Update] Ticket #${data.ticketId.slice(0, 8)}: ${data.subject}`, `<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:20px">
       <h2 style="color:#6366f1">Support Reply</h2>
       <p>Hi ${data.customerName},</p>
       <p>Our team has replied to your support request <strong>#${data.ticketId.slice(0, 8)}</strong>.</p>

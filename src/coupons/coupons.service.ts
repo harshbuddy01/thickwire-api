@@ -1,4 +1,4 @@
-import { Injectable, BadRequestException, NotFoundException } from '@nestjs/common';
+import { Injectable, BadRequestException, NotFoundException, ConflictException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { Decimal } from '@prisma/client/runtime/library';
 
@@ -28,21 +28,28 @@ export class CouponsService {
         startsAt?: string;
         expiresAt?: string;
     }) {
-        return this.prisma.coupon.create({
-            data: {
-                code: dto.code.toUpperCase(),
-                description: dto.description,
-                discountType: dto.discountType,
-                discountValue: dto.discountValue,
-                maxUses: dto.maxUses,
-                minOrderAmount: dto.minOrderAmount,
-                maxDiscountAmount: dto.maxDiscountAmount,
-                applicableServiceIds: dto.applicableServiceIds || [],
-                applicablePlanIds: dto.applicablePlanIds || [],
-                startsAt: dto.startsAt ? new Date(dto.startsAt) : new Date(),
-                expiresAt: dto.expiresAt ? new Date(dto.expiresAt) : null,
-            },
-        });
+        try {
+            return await this.prisma.coupon.create({
+                data: {
+                    code: dto.code.toUpperCase(),
+                    description: dto.description,
+                    discountType: dto.discountType,
+                    discountValue: dto.discountValue,
+                    maxUses: dto.maxUses,
+                    minOrderAmount: dto.minOrderAmount,
+                    maxDiscountAmount: dto.maxDiscountAmount,
+                    applicableServiceIds: dto.applicableServiceIds || [],
+                    applicablePlanIds: dto.applicablePlanIds || [],
+                    startsAt: dto.startsAt ? new Date(dto.startsAt) : new Date(),
+                    expiresAt: dto.expiresAt ? new Date(dto.expiresAt) : null,
+                },
+            });
+        } catch (error: any) {
+            if (error.code === 'P2002') {
+                throw new ConflictException('A coupon with this code already exists');
+            }
+            throw error;
+        }
     }
 
     async update(id: string, dto: Partial<{

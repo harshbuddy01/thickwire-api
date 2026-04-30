@@ -88,8 +88,13 @@ export class CronService {
         });
         for (const sub of expiring7) {
             const storefrontUrl = this.config.get('STOREFRONT_URL', 'http://localhost:3000');
+            const account = await this.prisma.customerAccount.findFirst({
+                where: { email: sub.customerEmail },
+                select: { name: true },
+            });
+            const customerName = account?.name || sub.customerEmail.split('@')[0];
             await this.email.sendExpiryReminder(sub.customerEmail, {
-                customerName: sub.customerEmail.split('@')[0],
+                customerName,
                 serviceName: sub.serviceName,
                 planName: sub.planName,
                 expiryDate: sub.expiresAt.toLocaleDateString('en-IN'),
@@ -112,8 +117,13 @@ export class CronService {
         });
         for (const sub of expiring3) {
             const storefrontUrl = this.config.get('STOREFRONT_URL', 'http://localhost:3000');
+            const account = await this.prisma.customerAccount.findFirst({
+                where: { email: sub.customerEmail },
+                select: { name: true },
+            });
+            const customerName = account?.name || sub.customerEmail.split('@')[0];
             await this.email.sendExpiryReminder(sub.customerEmail, {
-                customerName: sub.customerEmail.split('@')[0],
+                customerName,
                 serviceName: sub.serviceName,
                 planName: sub.planName,
                 expiryDate: sub.expiresAt.toLocaleDateString('en-IN'),
@@ -136,8 +146,13 @@ export class CronService {
         });
         for (const sub of expiring1) {
             const storefrontUrl = this.config.get('STOREFRONT_URL', 'http://localhost:3000');
+            const account = await this.prisma.customerAccount.findFirst({
+                where: { email: sub.customerEmail },
+                select: { name: true },
+            });
+            const customerName = account?.name || sub.customerEmail.split('@')[0];
             await this.email.sendExpiryReminder(sub.customerEmail, {
-                customerName: sub.customerEmail.split('@')[0],
+                customerName,
                 serviceName: sub.serviceName,
                 planName: sub.planName,
                 expiryDate: sub.expiresAt.toLocaleDateString('en-IN'),

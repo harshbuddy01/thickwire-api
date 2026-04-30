@@ -15,8 +15,10 @@ export class CustomerAuthController {
 
     @Post('verify-email')
     @HttpCode(200)
-    async verifyEmail(@Body() body: { token: string }) {
-        return this.authService.verifyEmail(body.token);
+    async verifyEmail(@Body() body: { token: string }, @Res({ passthrough: true }) res: Response) {
+        const result = await this.authService.verifyEmail(body.token);
+        this.setRefreshCookie(res, result.refreshToken, result.expiresAt);
+        return { message: result.message, accessToken: result.accessToken };
     }
 
     @Post('login')

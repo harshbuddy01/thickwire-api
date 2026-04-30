@@ -64,7 +64,9 @@ export class CustomerAuthService {
         // Send welcome email
         await this.email.sendWelcome(customer.email, { customerName: customer.name });
 
-        return { message: 'Email verified successfully' };
+        // Issue tokens so user is auto-logged in after verification
+        const tokens = await this.issueTokens(customer.id);
+        return { message: 'Email verified successfully', ...tokens };
     }
 
     // ── Login ──────────────────────────────────────────
@@ -197,10 +199,11 @@ export class CustomerAuthService {
     async getProfile(customerId: string) {
         const customer = await this.prisma.customerAccount.findUnique({
             where: { id: customerId },
-            select: { id: true, name: true, email: true, phone: true, avatarUrl: true, whatsappOptedIn: true, googleId: true, isVerified: true, createdAt: true },
+            select: { id: true, name: true, email: true, phone: true, avatarUrl: true, whatsappOptedIn: true, googleId: true, isVerified: true, createdAt: true, passwordHash: true },
         });
         if (!customer) throw new NotFoundException('Customer not found');
-        return { ...customer, hasPassword: !customer.googleId || !!customer.googleId }; // always true, just indicates auth method
+        const { passwordHash, ...profile } = customer;
+        return { ...profile, hasPassword: passwordHash !== null };
     }
 
     // ── Update Profile ─────────────────────────────────

@@ -7,6 +7,7 @@ import { OrdersService } from './orders.service';
 import { JwtAuthGuard } from '../common/guards/jwt-auth.guard';
 import { RolesGuard } from '../common/guards/roles.guard';
 import { Roles } from '../common/decorators/roles.decorator';
+import { OptionalCustomerJwtGuard } from '../customer-auth/optional-customer-jwt.guard';
 
 @Controller('orders')
 export class OrdersController {
@@ -15,6 +16,7 @@ export class OrdersController {
     // ─── Public ───────────────────────────────────────────
 
     @Post('create')
+    @UseGuards(OptionalCustomerJwtGuard)
     async createOrder(
         @Body() body: {
             customerName: string;
@@ -25,8 +27,10 @@ export class OrdersController {
             gateway?: 'razorpay' | 'cashfree';
             whatsappOptedIn?: boolean;
         },
+        @Req() req: any,
     ) {
-        return this.ordersService.createOrder(body);
+        const customerId = req.user?.id || null;
+        return this.ordersService.createOrder({ ...body, customerId });
     }
 
     @Post('verify-payment')

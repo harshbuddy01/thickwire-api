@@ -39,6 +39,7 @@ export class OrdersService {
         customerEmail: string;
         customerPhone: string;
         planId: string;
+        customerId?: string | null;
         couponCode?: string;
         gateway?: 'razorpay' | 'cashfree';
         whatsappOptedIn?: boolean;
@@ -118,6 +119,7 @@ export class OrdersService {
                 customerName: data.customerName,
                 customerEmail: data.customerEmail,
                 customerPhone: data.customerPhone,
+                customerId: data.customerId || null,
                 serviceId: plan.serviceId,
                 planId: plan.id,
                 amountPaid: finalAmount.toString(),

@@ -252,17 +252,16 @@ export class CronService {
                         amount: String(order.amountPaid),
                     });
                 } else {
-                    // Payment was NOT completed — auto-cancel (EXPIRED)
+                    // Payment was NOT completed — permanently delete it from the system
                     const reason = actualStatus === 'attempted'
                         ? 'Payment attempted but failed by user'
                         : 'Payment not completed within 5 minutes';
 
-                    await this.prisma.order.update({
+                    await this.prisma.order.delete({
                         where: { id: order.id },
-                        data: { paymentStatus: 'EXPIRED' },
                     });
 
-                    this.logger.log(`Order ${order.id.slice(0, 8)} auto-cancelled: ${reason}`);
+                    this.logger.log(`Order ${order.id.slice(0, 8)} permanently deleted (expired): ${reason}`);
 
                     // Notify admin via Telegram
                     await this.telegram.sendPaymentExpired({

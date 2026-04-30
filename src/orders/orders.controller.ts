@@ -1,5 +1,5 @@
 import {
-    Controller, Get, Post, Body, Param, Query, Req, UseGuards,
+    Controller, Get, Post, Delete, Body, Param, Query, Req, UseGuards,
     HttpCode, HttpStatus, Headers, RawBodyRequest,
 } from '@nestjs/common';
 import { Request } from 'express';
@@ -91,5 +91,13 @@ export class OrdersController {
         @Body('content') content: string,
     ) {
         return this.ordersService.manualFulfill(id, content);
+    }
+
+    @Delete('admin/:id')
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles('SUPER_ADMIN')
+    async deleteOrder(@Param('id') id: string) {
+        await this.ordersService.deleteOrder(id);
+        return { message: 'Order deleted successfully' };
     }
 }

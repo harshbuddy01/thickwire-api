@@ -398,4 +398,17 @@ export class OrdersService {
         await this.notification.sendOrderDelivered(order, content);
         return { status: 'fulfilled' };
     }
+
+    async deleteOrder(orderId: string) {
+        const order = await this.prisma.order.findUnique({ where: { id: orderId } });
+        if (!order) throw new BadRequestException('Order not found');
+
+        // Only allow deleting failed/expired/pending orders — not paid confirmed ones
+        if (order.paymentStatus === 'CONFIRMED') {
+            throw new BadRequestException('Cannot delete a confirmed/paid order');
+        }
+
+        await this.prisma.order.delete({ where: { id: orderId } });
+        return { deleted: true };
+    }
 }

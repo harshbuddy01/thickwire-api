@@ -41,9 +41,13 @@ export class CustomerAuthController {
         const result = await this.authService.handleGoogleUser(req.user);
         this.setRefreshCookie(res, result.refreshToken, result.expiresAt);
 
+        // Read redirect state from Google OAuth flow
+        const state = req.query.state as string;
+        const redirectTo = state ? decodeURIComponent(state) : '/account';
+
         // Redirect to storefront with short-lived exchange token
         const storefrontUrl = (process.env.STOREFRONT_URL || 'http://localhost:3000').trim();
-        res.redirect(`${storefrontUrl}/auth/callback?token=${result.accessToken}`);
+        res.redirect(`${storefrontUrl}/auth/callback?token=${result.accessToken}&redirect=${encodeURIComponent(redirectTo)}`);
     }
 
     @Post('refresh')

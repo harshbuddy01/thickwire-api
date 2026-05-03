@@ -4,27 +4,14 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class EmailService {
   private readonly logger = new Logger(EmailService.name);
-  private transporter: any;
+  private apiKey: string;
   private fromEmail: string;
-
   private supportEmail: string;
   private ordersEmail: string;
 
   constructor(private readonly config: ConfigService) {
-    const nodemailer = require('nodemailer');
-    this.transporter = nodemailer.createTransport({
-      host: '1.179.116.1', // Forced IPv4 to fix Railway connection timeout
-      port: this.config.get<number>('SMTP_PORT', 587),
-      secure: false, // 587 uses STARTTLS
-      auth: {
-        user: this.config.get('SMTP_USER', 'a971a9001@smtp-brevo.com'),
-        pass: this.config.get('SMTP_PASS', 'sMYSFpvKtVh2BI71'),
-      },
-      tls: {
-        servername: 'smtp-relay.brevo.com', // Needed for SSL certificate validation
-        rejectUnauthorized: false // Fallback if cert validation fails over direct IP
-      }
-    });
+    this.apiKey = this.config.get('BREVO_API_KEY', '');
+    
     
     // The actual email addresses to use
     const baseOrdersEmail = this.config.get('SMTP_ORDERS_EMAIL', 'orders@streamkart.store');
@@ -165,17 +152,31 @@ export class EmailService {
 
   private async send(to: string, subject: string, html: string, options?: { from?: string; replyTo?: string }) {
     try {
-      await this.transporter.sendMail({
-        from: options?.from || this.fromEmail,
-        replyTo: options?.replyTo,
-        to,
+      const axios = require('axios');
+      
+      const payload = {
+        sender: { 
+          name: options?.from ? options.from.split('<')[0].trim() : 'StreamKart', 
+          email: options?.from ? options.from.match(/<([^>]+)>/)?.[1] || this.fromEmail : this.fromEmail 
+        },
+        to: [{ email: to }],
         subject,
-        html,
+        htmlContent: html,
+        replyTo: options?.replyTo ? { email: options.replyTo } : undefined
+      };
+
+      await axios.post('https://api.brevo.com/v3/smtp/email', payload, {
+        headers: {
+          'api-key': this.apiKey,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
       });
-      this.logger.log(`Email sent to ${to}: ${subject}`);
+
+      this.logger.log(`Email sent via API to ${to}: ${subject}`);
       return true;
     } catch (err: any) {
-      this.logger.error(`Email failed to ${to}: ${err.message}`);
+      this.logger.error(`API Email failed to ${to}: ${err.response?.data?.message || err.message}`);
       return false;
     }
   }

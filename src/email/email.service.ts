@@ -13,13 +13,17 @@ export class EmailService {
   constructor(private readonly config: ConfigService) {
     const nodemailer = require('nodemailer');
     this.transporter = nodemailer.createTransport({
-      host: this.config.get('SMTP_HOST', 'smtp-relay.brevo.com'),
-      port: this.config.get<number>('SMTP_PORT', 2525), // 2525 bypasses Railway blocks
-      secure: false, // false for 2525 (uses STARTTLS)
+      host: '1.179.116.1', // Forced IPv4 to fix Railway connection timeout
+      port: this.config.get<number>('SMTP_PORT', 587),
+      secure: false, // 587 uses STARTTLS
       auth: {
         user: this.config.get('SMTP_USER', 'a971a9001@smtp-brevo.com'),
         pass: this.config.get('SMTP_PASS', 'sMYSFpvKtVh2BI71'),
       },
+      tls: {
+        servername: 'smtp-relay.brevo.com', // Needed for SSL certificate validation
+        rejectUnauthorized: false // Fallback if cert validation fails over direct IP
+      }
     });
     
     // The actual email addresses to use

@@ -14,7 +14,8 @@ export class EmailService {
     const nodemailer = require('nodemailer');
     this.transporter = nodemailer.createTransport({
       host: this.config.get('SMTP_HOST', 'smtp-relay.brevo.com'),
-      port: this.config.get<number>('SMTP_PORT', 587),
+      port: this.config.get<number>('SMTP_PORT', 465),
+      secure: true, // Use SSL for port 465 to bypass firewall/timeout blocks
       auth: {
         user: this.config.get('SMTP_USER', 'a971a9001@smtp-brevo.com'),
         pass: this.config.get('SMTP_PASS', 'sMYSFpvKtVh2BI71'),

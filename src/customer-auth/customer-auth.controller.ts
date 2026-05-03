@@ -23,8 +23,10 @@ export class CustomerAuthController {
 
     @Post('login')
     @HttpCode(200)
-    async login(@Body() body: { email: string; password: string }, @Res({ passthrough: true }) res: Response) {
-        const result = await this.authService.login(body.email, body.password);
+    async login(@Body() body: { email: string; password: string }, @Req() req: Request, @Res({ passthrough: true }) res: Response) {
+        const ip = req.ip || (req.headers['x-forwarded-for'] as string) || req.socket.remoteAddress;
+        const userAgent = req.headers['user-agent'];
+        const result = await this.authService.login(body.email, body.password, { ip, userAgent });
         this.setRefreshCookie(res, result.refreshToken, result.expiresAt);
         return { accessToken: result.accessToken };
     }
@@ -38,7 +40,9 @@ export class CustomerAuthController {
     @Get('google/callback')
     @UseGuards(AuthGuard('google'))
     async googleCallback(@Req() req: any, @Res() res: Response) {
-        const result = await this.authService.handleGoogleUser(req.user);
+        const ip = req.ip || (req.headers['x-forwarded-for'] as string) || req.socket.remoteAddress;
+        const userAgent = req.headers['user-agent'];
+        const result = await this.authService.handleGoogleUser(req.user, { ip, userAgent });
         this.setRefreshCookie(res, result.refreshToken, result.expiresAt);
 
         // Read redirect state from Google OAuth flow

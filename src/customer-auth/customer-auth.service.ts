@@ -70,7 +70,7 @@ export class CustomerAuthService {
     }
 
     // ── Login ──────────────────────────────────────────
-    async login(email: string, password: string) {
+    async login(email: string, password: string, meta?: { ip?: string; userAgent?: string }) {
         const customer = await this.prisma.customerAccount.findUnique({ where: { email } });
         if (!customer || !customer.passwordHash) throw new UnauthorizedException('Invalid email or password');
         if (!customer.isActive) throw new UnauthorizedException('Account is deactivated');
@@ -86,11 +86,18 @@ export class CustomerAuthService {
         // Update last login
         await this.prisma.customerAccount.update({ where: { id: customer.id }, data: { lastLoginAt: new Date() } });
 
+        // Send login alert email
+        this.email.sendLoginAlert(customer.email, {
+            customerName: customer.name,
+            ip: meta?.ip,
+            userAgent: meta?.userAgent,
+        }).catch(err => this.logger.error(`Login alert failed for ${customer.email}: ${err.message}`));
+
         return this.issueTokens(customer.id);
     }
 
     // ── Google OAuth ───────────────────────────────────
-    async handleGoogleUser(profile: { googleId: string; email: string; name: string; avatarUrl?: string }) {
+    async handleGoogleUser(profile: { googleId: string; email: string; name: string; avatarUrl?: string }, meta?: { ip?: string; userAgent?: string }) {
         let customer = await this.prisma.customerAccount.findFirst({
             where: { OR: [{ googleId: profile.googleId }, { email: profile.email }] },
         });
@@ -125,6 +132,13 @@ export class CustomerAuthService {
                 customerName: customer.name,
             }).catch(err => this.logger.error(`Welcome email failed for ${customerEmail}: ${err.message}`));
         }
+
+        // Send login alert email
+        this.email.sendLoginAlert(customer.email, {
+            customerName: customer.name,
+            ip: meta?.ip,
+            userAgent: meta?.userAgent,
+        }).catch(err => this.logger.error(`Login alert (Google) failed for ${customer.email}: ${err.message}`));
 
         // Link guest orders
         await this.linkGuestOrders(customer.id, customer.email);

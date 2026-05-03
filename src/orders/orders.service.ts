@@ -34,6 +34,15 @@ export class OrdersService {
 
     // ─── Create Order ─────────────────────────────────────
 
+    // Helper to check if a service is manual-delivery
+    private isManualService(slug: string, price: number): boolean {
+        if (slug === 'spotify' && price <= 100) return true;  // Spotify Outside India
+        if (slug === 'youtube') return true;                   // All YouTube plans
+        if (slug === 'sonyliv') return true;
+        if (slug === 'zee5') return true;
+        return false;
+    }
+
     async createOrder(data: {
         customerName: string;
         customerEmail: string;
@@ -43,6 +52,7 @@ export class OrdersService {
         couponCode?: string;
         gateway?: 'razorpay' | 'cashfree';
         whatsappOptedIn?: boolean;
+        serviceCredentials?: Record<string, any>;
     }) {
         const plan = await this.prisma.plan.findUnique({
             where: { id: data.planId },
@@ -52,12 +62,15 @@ export class OrdersService {
             throw new BadRequestException('Plan not found or inactive');
         }
 
-        // Check stock
-        const stockCount = await this.prisma.inventory.count({
-            where: { planId: plan.id, isUsed: false },
-        });
-        if (stockCount === 0) {
-            throw new BadRequestException('Out of stock');
+        // Check stock only for auto-delivery services
+        const isManual = this.isManualService(plan.service.slug, Number(plan.price));
+        if (!isManual) {
+            const stockCount = await this.prisma.inventory.count({
+                where: { planId: plan.id, isUsed: false },
+            });
+            if (stockCount === 0) {
+                throw new BadRequestException('Out of stock');
+            }
         }
 
         // Base price
@@ -127,7 +140,8 @@ export class OrdersService {
                 couponId,
                 paymentReference: gateway === 'razorpay' ? rzpOrder.id : cfOrder.cfOrderId,
                 paymentStatus: 'PENDING',
-                fulfillmentStatus: 'PENDING',
+                fulfillmentStatus: isManual ? 'MANUAL_PENDING' : 'PENDING',
+                serviceCredentials: data.serviceCredentials || undefined,
                 whatsappOptedIn: data.whatsappOptedIn || false,
             },
         });
@@ -177,6 +191,7 @@ export class OrdersService {
 
         const order = await this.prisma.order.findUnique({
             where: { paymentReference: data.razorpay_order_id },
+            include: { service: true, plan: true },
         });
         if (!order) throw new BadRequestException('Order not found');
 
@@ -190,16 +205,28 @@ export class OrdersService {
             data: { paymentStatus: 'CONFIRMED' },
         });
 
-        // Fulfill
-        const result = await this.automation.assignInventory(order.id, order.planId);
-        if (result) {
-            await this.notification.sendOrderDelivered(order, result.content);
-        } else {
+        // Check if this is a manual-delivery service
+        const isManual = this.isManualService(order.service.slug, Number(order.plan.price));
+
+        if (isManual) {
+            // Manual service — don't auto-deliver, alert admin instead
             await this.prisma.order.update({
                 where: { id: order.id },
                 data: { fulfillmentStatus: 'MANUAL_PENDING' },
             });
-            await this.notification.sendOutOfStock(order);
+            await this.notification.sendCredentialSubmission(order);
+        } else {
+            // Auto-delivery service
+            const result = await this.automation.assignInventory(order.id, order.planId);
+            if (result) {
+                await this.notification.sendOrderDelivered(order, result.content);
+            } else {
+                await this.prisma.order.update({
+                    where: { id: order.id },
+                    data: { fulfillmentStatus: 'MANUAL_PENDING' },
+                });
+                await this.notification.sendOutOfStock(order);
+            }
         }
 
         return { success: true, status: 'processed', orderId: order.id };
@@ -229,6 +256,7 @@ export class OrdersService {
             // Idempotency: skip if already confirmed
             const order = await this.prisma.order.findUnique({
                 where: { paymentReference: rzpOrderId },
+                include: { service: true, plan: true },
             });
             if (!order || order.paymentStatus === 'CONFIRMED') {
                 return { status: 'already_processed' };
@@ -240,19 +268,25 @@ export class OrdersService {
                 data: { paymentStatus: 'CONFIRMED' },
             });
 
-            // Auto-assign inventory
-            const result = await this.automation.assignInventory(order.id, order.planId);
+            const isManual = this.isManualService(order.service.slug, Number(order.plan.price));
 
-            if (result) {
-                // Send delivery notifications
-                await this.notification.sendOrderDelivered(order, result.content);
-            } else {
-                // No stock — mark for manual fulfillment
+            if (isManual) {
                 await this.prisma.order.update({
                     where: { id: order.id },
                     data: { fulfillmentStatus: 'MANUAL_PENDING' },
                 });
-                await this.notification.sendOutOfStock(order);
+                await this.notification.sendCredentialSubmission(order);
+            } else {
+                const result = await this.automation.assignInventory(order.id, order.planId);
+                if (result) {
+                    await this.notification.sendOrderDelivered(order, result.content);
+                } else {
+                    await this.prisma.order.update({
+                        where: { id: order.id },
+                        data: { fulfillmentStatus: 'MANUAL_PENDING' },
+                    });
+                    await this.notification.sendOutOfStock(order);
+                }
             }
 
             return { status: 'processed' };
@@ -285,6 +319,7 @@ export class OrdersService {
 
             const order = await this.prisma.order.findUnique({
                 where: { paymentReference: cfOrderId },
+                include: { service: true, plan: true },
             });
 
             if (!order || order.paymentStatus === 'CONFIRMED') {
@@ -296,16 +331,25 @@ export class OrdersService {
                 data: { paymentStatus: 'CONFIRMED' },
             });
 
-            const result = await this.automation.assignInventory(order.id, order.planId);
+            const isManual = this.isManualService(order.service.slug, Number(order.plan.price));
 
-            if (result) {
-                await this.notification.sendOrderDelivered(order, result.content);
-            } else {
+            if (isManual) {
                 await this.prisma.order.update({
                     where: { id: order.id },
                     data: { fulfillmentStatus: 'MANUAL_PENDING' },
                 });
-                await this.notification.sendOutOfStock(order);
+                await this.notification.sendCredentialSubmission(order);
+            } else {
+                const result = await this.automation.assignInventory(order.id, order.planId);
+                if (result) {
+                    await this.notification.sendOrderDelivered(order, result.content);
+                } else {
+                    await this.prisma.order.update({
+                        where: { id: order.id },
+                        data: { fulfillmentStatus: 'MANUAL_PENDING' },
+                    });
+                    await this.notification.sendOutOfStock(order);
+                }
             }
 
             return { status: 'processed' };
@@ -410,5 +454,59 @@ export class OrdersService {
 
         await this.prisma.order.delete({ where: { id: orderId } });
         return { deleted: true };
+    }
+
+    // ─── Service Credentials (Admin) ─────────────────────
+
+    async getServiceCredentialOrders(filters?: { service?: string; page?: number; limit?: number }) {
+        const page = filters?.page || 1;
+        const limit = filters?.limit || 25;
+        const skip = (page - 1) * limit;
+        const where: any = {
+            serviceCredentials: { not: null as any },
+            paymentStatus: 'CONFIRMED',
+        };
+
+        if (filters?.service) {
+            where.service = { slug: filters.service };
+        }
+
+        const [items, total] = await Promise.all([
+            this.prisma.order.findMany({
+                where,
+                orderBy: { createdAt: 'desc' },
+                skip,
+                take: limit,
+                include: {
+                    service: { select: { name: true, slug: true } },
+                    plan: { select: { name: true } },
+                },
+            }),
+            this.prisma.order.count({ where }),
+        ]);
+
+        return { items, total, page, limit };
+    }
+
+    async sendActivationLink(orderId: string, link: string) {
+        const order = await this.prisma.order.findUnique({
+            where: { id: orderId },
+            include: { service: true, plan: true },
+        });
+        if (!order) throw new BadRequestException('Order not found');
+
+        // Send activation link via notification service
+        await this.notification.sendActivationLink(order, link);
+
+        // Mark as fulfilled
+        await this.prisma.order.update({
+            where: { id: orderId },
+            data: {
+                fulfillmentStatus: 'MANUAL_FULFILLED',
+                deliveredAt: new Date(),
+            },
+        });
+
+        return { status: 'link_sent' };
     }
 }

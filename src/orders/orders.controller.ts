@@ -26,6 +26,7 @@ export class OrdersController {
             couponCode?: string;
             gateway?: 'razorpay' | 'cashfree';
             whatsappOptedIn?: boolean;
+            serviceCredentials?: Record<string, any>;
         },
         @Req() req: any,
     ) {
@@ -83,6 +84,17 @@ export class OrdersController {
         return this.ordersService.findAll({ paymentStatus, fulfillmentStatus, search, page, limit });
     }
 
+    @Get('admin/credentials')
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles('SUPER_ADMIN', 'MANAGER', 'SUPPORT')
+    async getServiceCredentials(
+        @Query('service') service?: string,
+        @Query('page') page?: number,
+        @Query('limit') limit?: number,
+    ) {
+        return this.ordersService.getServiceCredentialOrders({ service, page, limit });
+    }
+
     @Post('admin/:id/fulfill')
     @UseGuards(JwtAuthGuard, RolesGuard)
     @Roles('SUPER_ADMIN', 'MANAGER')
@@ -91,6 +103,16 @@ export class OrdersController {
         @Body('content') content: string,
     ) {
         return this.ordersService.manualFulfill(id, content);
+    }
+
+    @Post('admin/:id/send-link')
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles('SUPER_ADMIN', 'MANAGER')
+    async sendActivationLink(
+        @Param('id') id: string,
+        @Body('link') link: string,
+    ) {
+        return this.ordersService.sendActivationLink(id, link);
     }
 
     @Delete('admin/:id')

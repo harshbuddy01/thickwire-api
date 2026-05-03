@@ -61,6 +61,21 @@ export class TelegramService {
         );
     }
 
+    async sendCredentialSubmission(data: { orderId: string; customerName: string; customerEmail: string; serviceName: string; credentials: Record<string, any> }) {
+        const credLines = Object.entries(data.credentials)
+            .map(([key, val]) => `  • ${key}: \`${key.toLowerCase().includes('password') ? '*****' : val}\``)
+            .join('\n');
+        return this.send(
+            `🔐 *New ${data.serviceName} Credentials Received*\nOrder: \`${data.orderId.slice(0, 8)}\`\nCustomer: ${data.customerName}\nEmail: ${data.customerEmail}\n\nCredentials:\n${credLines}`,
+        );
+    }
+
+    async sendActivationLinkSent(data: { orderId: string; customerEmail: string; link: string }) {
+        return this.send(
+            `🔗 *Activation Link Sent*\nOrder: \`${data.orderId.slice(0, 8)}\`\nTo: ${data.customerEmail}\nLink: ${data.link}`,
+        );
+    }
+
     async testConnection(): Promise<boolean> {
         try {
             await this.send('🔔 ThickWire bot connection test successful!');

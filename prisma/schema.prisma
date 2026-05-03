@@ -77,6 +77,7 @@ model Order {
   couponId          String?           // FK to Coupon (nullable)
   discountAmount    Decimal?          @db.Decimal(10, 2)
   finalAmount       Decimal?          @db.Decimal(10, 2) // amountPaid after discount
+  serviceCredentials Json?            // stores user-submitted data (Spotify creds, YouTube email, mobile number)
   whatsappOptedIn   Boolean           @default(false)
   createdAt         DateTime          @default(now())
   updatedAt         DateTime          @updatedAt

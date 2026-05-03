@@ -120,6 +120,19 @@ export class EmailService {
     </div>`, { from: this.supportEmail, replyTo: 'support@streamkart.store' });
   }
 
+  async sendActivationLink(to: string, data: { customerName: string; orderId: string; serviceName: string; planName: string; link: string }) {
+    return this.send(to, `Your ${data.serviceName} Activation Link — StreamKart`, `<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:40px;border:1px solid #f0f0f0;border-radius:24px;text-align:center;">
+      <h2 style="color:#6366f1;font-size:26px;margin-bottom:16px;">Your ${data.serviceName} is Ready! 🎉</h2>
+      <p style="color:#475569;font-size:16px;line-height:1.6;">Hi ${data.customerName},</p>
+      <p style="color:#475569;font-size:16px;line-height:1.6;">Great news! Your <strong>${data.serviceName} — ${data.planName}</strong> (Order #${data.orderId.slice(0, 8)}) has been activated.</p>
+      <p style="color:#475569;font-size:16px;line-height:1.6;">Click the button below to complete your activation:</p>
+      <a href="${data.link}" style="display:inline-block;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;padding:16px 40px;border-radius:12px;text-decoration:none;font-weight:700;margin:24px 0;box-shadow:0 10px 20px rgba(99,102,241,0.3);font-size:1.1rem;">Activate Now</a>
+      <p style="color:#94a3b8;font-size:13px;margin-top:16px;">If the button doesn't work, copy and paste this link:<br/><a href="${data.link}" style="color:#6366f1;word-break:break-all;">${data.link}</a></p>
+      <hr style="border:0;border-top:1px solid #eee;margin:32px 0;"/>
+      <p style="color:#94a3b8;font-size:12px;">StreamKart — Your Premium Digital Marketplace</p>
+    </div>`, { from: this.supportEmail, replyTo: 'support@streamkart.store' });
+  }
+
   // ─── Phase 2: Subscription Expiry Emails ─────────────
 
   async sendExpiryReminder(to: string, data: { customerName: string; serviceName: string; planName: string; expiryDate: string; daysLeft: number; renewUrl: string }) {

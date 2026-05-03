@@ -108,6 +108,60 @@ export class NotificationService {
         }
     }
 
+    // ─── Service Credentials Notifications ────────────────
+
+    async sendCredentialSubmission(order: any) {
+        const service = order.service || await this.prisma.service.findUnique({ where: { id: order.serviceId } });
+        const plan = order.plan || await this.prisma.plan.findUnique({ where: { id: order.planId } });
+
+        // Send Telegram alert to admin with credential details
+        const credentials = order.serviceCredentials || {};
+        const tgSent = await this.telegram.sendCredentialSubmission({
+            orderId: order.id,
+            customerName: order.customerName,
+            customerEmail: order.customerEmail,
+            serviceName: service?.name || 'N/A',
+            credentials,
+        });
+
+        await this.logNotification(order.id, 'telegram', 'admin-group', 'credential_submission', tgSent);
+
+        // Send processing email to customer
+        const emailSent = await this.email.sendOrderProcessingDelay(order.customerEmail, {
+            customerName: order.customerName,
+            orderId: order.id,
+            serviceName: service?.name || 'N/A',
+            planName: plan?.name || 'N/A',
+        });
+
+        await this.logNotification(order.id, 'email', order.customerEmail, 'order_processing', emailSent);
+    }
+
+    async sendActivationLink(order: any, link: string) {
+        const service = order.service || await this.prisma.service.findUnique({ where: { id: order.serviceId } });
+        const plan = order.plan || await this.prisma.plan.findUnique({ where: { id: order.planId } });
+
+        // Send activation link email to customer
+        const emailSent = await this.email.sendActivationLink(order.customerEmail, {
+            customerName: order.customerName,
+            orderId: order.id,
+            serviceName: service?.name || 'N/A',
+            planName: plan?.name || 'N/A',
+            link,
+        });
+
+        await this.logNotification(order.id, 'email', order.customerEmail, 'activation_link', emailSent);
+
+        // Send Telegram confirmation to admin
+        const tgSent = await this.telegram.sendActivationLinkSent({
+            orderId: order.id,
+            customerEmail: order.customerEmail,
+            link,
+        });
+
+        await this.logNotification(order.id, 'telegram', 'admin-group', 'activation_link_sent', tgSent);
+    }
+
     private async logNotification(
         orderId: string | null,
         channel: string,
